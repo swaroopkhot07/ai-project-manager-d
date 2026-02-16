@@ -1,0 +1,17 @@
+{
+    "name": "ai-project-manager-backend",
+    "version": "1.0.0",
+    "description": "FastAPI backend for AI Project Manager",
+    "main": "backend/main.py",
+    "scripts": {
+        "start": "cd backend && uvicorn main:app --host 0.0.0.0 --port $PORT"
+    },
+    "buildCommand": "pip install -r requirements.txt && python -m spacy download en_core_web_sm",
+    "keywords": [
+        "fastapi",
+        "ai",
+        "project-management"
+    ],
+    "author": "",
+    "license": "ISC"
+}

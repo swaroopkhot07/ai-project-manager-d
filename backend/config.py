@@ -28,7 +28,10 @@ class Config:
     
     # CORS (Frontend URLs that can access the backend)
     FRONTEND_URL = os.getenv('FRONTEND_URL', 'http://localhost:4200')
-    ALLOWED_ORIGINS = os.getenv('ALLOWED_ORIGINS', FRONTEND_URL).split(',')
+    # Support multiple origins separated by commas
+    # For production, add your Vercel domain: https://your-app.vercel.app
+    ALLOWED_ORIGINS = [origin.strip() for origin in os.getenv('ALLOWED_ORIGINS', FRONTEND_URL).split(',')]
+
     
     # Java Backend (future integration)
     JAVA_BACKEND_URL = os.getenv('JAVA_BACKEND_URL', None)

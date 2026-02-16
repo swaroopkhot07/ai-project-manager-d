@@ -1,14 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ChatService {
-  // Backend API URL - Change this if backend is on different host/port
-  // For production: change to your deployed backend URL
-  private apiUrl = 'http://127.0.0.1:8000/chat';
+  private apiUrl = `${environment.apiUrl}/chat`;
 
   constructor(private http: HttpClient) { }
 
